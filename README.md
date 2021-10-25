@@ -6,16 +6,14 @@ Used Tools:
 - Front-end: JavaScript, HTML, CSS, React, Bootstrap, React-router
 - Back-end: Node.js, Express, Mongoose(MongoDB),
 
-# To start project:
+# To start the project:
 
-1. In folder "backend"
-   Type in console:
+1. In folder "backend" type in console:
 
 - npm i
 - npm start
 
-2. In main folder
-   Type in console:
+2. In main folder type in console:
 
 - npm i
 - npm start
