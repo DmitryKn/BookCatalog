@@ -6,6 +6,7 @@ import UpdateBook from './Pages/UpdateBook';
 import BookDetails from './Pages/BookDetails';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

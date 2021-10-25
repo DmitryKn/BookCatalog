@@ -10,10 +10,12 @@ const Book = ({ book, editBook, deleteBook }) => {
       </Link>
       <p>{author}</p>
       <div>
-        <Link to={`/books/edit/${_id}`}>
-          <button>Edit</button>
+        <Link to={`/books/edit/${_id}`} className='m-3'>
+          <button className='btn btn-secondary'>Edit</button>
         </Link>
-        <button onClick={() => deleteBook(_id)}>Delete</button>
+        <button className='btn btn-danger' onClick={() => deleteBook(_id)}>
+          Delete
+        </button>
       </div>
     </>
   );
