@@ -36,17 +36,19 @@ const List = () => {
   }
 
   return (
-    <div>
-      <h1>List:</h1>
-      {books.map((book) => {
-        return (
-          <Book
-            key={book._id}
-            book={book}
-            deleteBook={() => deleteBook(book._id)}
-          />
-        );
-      })}
+    <div className='container'>
+      <h2>Books:</h2>
+      <div className='d-flex flex-row flex-wrap justify-content-center'>
+        {books.map((book) => {
+          return (
+            <Book
+              key={book._id}
+              book={book}
+              deleteBook={() => deleteBook(book._id)}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

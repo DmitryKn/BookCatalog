@@ -21,7 +21,9 @@ const BookDetails = () => {
       <p>{book.id}</p>
       <h2>{book.title}</h2>
       <p>{book.author}</p>
-      <Link to='/'>Back</Link>
+      <Link to='/'>
+        <button className='btn btn-primary'>Back</button>
+      </Link>
     </div>
   );
 };

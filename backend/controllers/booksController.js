@@ -59,10 +59,10 @@ exports.addBook = async (req, res) => {
 exports.updateBook = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, author } = req.body;
+    const { title, author, image } = req.body;
     const updatedBook = await Book.findByIdAndUpdate(
       id,
-      { title, author },
+      { title, author, image },
       { new: true }
     );
     res.status(200).json({

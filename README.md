@@ -2,8 +2,9 @@
 
 Full-stack project(MERN).
 Used Tools:
-Front-end: JavaScript, HTML, CSS, React, Bootstrap, React-router
-Back-end: Node.js, Express, Mongoose(MongoDB),
+
+- Front-end: JavaScript, HTML, CSS, React, Bootstrap, React-router
+- Back-end: Node.js, Express, Mongoose(MongoDB),
 
 # To start project:
 

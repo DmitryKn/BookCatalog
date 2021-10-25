@@ -3,8 +3,8 @@ import List from '../Components/List';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Book Catalog Project</h1>
+    <div className='container'>
+      <h1 className='text-center mt-5'>Book Catalog Project</h1>
       <List />
     </div>
   );

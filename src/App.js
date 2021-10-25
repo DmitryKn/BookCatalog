@@ -3,6 +3,7 @@ import Home from './Pages/Home';
 import NewBook from './Pages/NewBook';
 import Navbar from './Components/Navbar';
 import UpdateBook from './Pages/UpdateBook';
+import About from './Pages/About';
 import BookDetails from './Pages/BookDetails';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
         <Route exact path='/books/newbook' component={NewBook} />
         <Route exact path='/books/edit/:id' component={UpdateBook} />
         <Route exact path='/books/:id' component={BookDetails} />
+        <Route exact path='/about' component={About} />
       </Switch>
     </div>
   );

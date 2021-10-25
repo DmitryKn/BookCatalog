@@ -18,6 +18,10 @@ const bookSchema = mongoose.Schema({
     ],
     minlength: [3, 'A author name must have more or equal then 3 characters'],
   },
+  image: {
+    type: String,
+    minlength: [3, 'A author name must have more or equal then 3 characters'],
+  },
 });
 
 const Book = mongoose.model('Book', bookSchema);
