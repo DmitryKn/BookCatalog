@@ -5,7 +5,9 @@ const Book = ({ book, deleteBook }) => {
   const { title, author, _id, image } = book;
   return (
     <div className='card mb-3'>
-      <img src={image} className='card-img-top' alt={title} />
+      <Link to={`/books/${_id}`}>
+        <img src={image} className='card-img-top' alt={title} />
+      </Link>
       <div className='card-body'>
         <Link to={`/books/${_id}`}>
           <h5 className='card-title text-center'>{title}</h5>

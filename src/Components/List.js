@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import SearchForm from './SearchForm';
 import Book from './Book';
 
 const List = () => {
   const [books, setBooks] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const URL = 'http://localhost:5000/api/books';
 
   const fetchBooks = useCallback(async () => {
@@ -27,6 +29,11 @@ const List = () => {
     }
   };
 
+  const searchBook = (search) => {
+    console.log(search);
+    setSearchTerm(search);
+  };
+
   useEffect(() => {
     fetchBooks();
   }, [fetchBooks]);
@@ -37,17 +44,24 @@ const List = () => {
 
   return (
     <div className='container'>
+      <SearchForm searchTerm={searchBook} />
       <h2>Books:</h2>
       <div className='d-flex flex-row flex-wrap justify-content-center'>
-        {books.map((book) => {
-          return (
-            <Book
-              key={book._id}
-              book={book}
-              deleteBook={() => deleteBook(book._id)}
-            />
-          );
-        })}
+        {books
+          .filter((book) => {
+            if (book === '') return book;
+            if (book.title.toLowerCase().includes(searchTerm.toLowerCase()))
+              return book;
+          })
+          .map((book) => {
+            return (
+              <Book
+                key={book._id}
+                book={book}
+                deleteBook={() => deleteBook(book._id)}
+              />
+            );
+          })}
       </div>
     </div>
   );

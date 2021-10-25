@@ -4,7 +4,7 @@ import List from '../Components/List';
 const Home = () => {
   return (
     <div className='container'>
-      <h1 className='text-center mt-5'>Book Catalog Project</h1>
+      <h2 className='text-center mt-5'>Book Catalog</h2>
       <List />
     </div>
   );

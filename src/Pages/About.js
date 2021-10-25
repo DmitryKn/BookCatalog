@@ -2,8 +2,8 @@ import React from 'react';
 
 function About() {
   return (
-    <div>
-      <h2>About Project:</h2>
+    <div className='mx-auto col-md-8'>
+      <h2 className='my-4 text-center'>About Project:</h2>
       <p>Full-stack project (MERN stack). </p>
       <p>Used Tools:</p>
       <p>
