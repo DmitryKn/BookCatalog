@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import SearchForm from './SearchForm';
 import Book from './Book';
 
 const List = () => {
   const [books, setBooks] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [search, setSearch] = useState('');
   const URL = 'http://localhost:5000/api/books';
 
   const fetchBooks = useCallback(async () => {
@@ -29,11 +28,6 @@ const List = () => {
     }
   };
 
-  const searchBook = (search) => {
-    console.log(search);
-    setSearchTerm(search);
-  };
-
   useEffect(() => {
     fetchBooks();
   }, [fetchBooks]);
@@ -42,15 +36,32 @@ const List = () => {
     return <>Loading...</>;
   }
 
+  function handleChange(e) {
+    e.preventDefault();
+    setSearch(e.target.value);
+  }
+
   return (
     <div className='container'>
-      <SearchForm searchTerm={searchBook} />
+      <section className='text-center mb-4 '>
+        <form>
+          <div className='d-flex flex-row flex-wrap justify-content-center'>
+            <input
+              className='form-control w-75'
+              type='text'
+              onChange={handleChange}
+              placeholder='Search book by title'
+            />
+          </div>
+        </form>
+      </section>
+
       <h2>Books:</h2>
       <div className='d-flex flex-row flex-wrap justify-content-center'>
         {books
           .filter((book) => {
             if (book === '') return book;
-            if (book.title.toLowerCase().includes(searchTerm.toLowerCase()))
+            if (book.title.toLowerCase().includes(search.toLowerCase()))
               return book;
           })
           .map((book) => {
