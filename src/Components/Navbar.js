@@ -13,7 +13,7 @@ const Navbar = () => {
             Home
           </Link>
           <Link to='/books/newbook' className='nav-link'>
-            AddBook
+            AddBook{' '}
           </Link>
           <Link to='/about' className='nav-link'>
             About

@@ -8,7 +8,7 @@ const List = () => {
 
   const fetchBooks = useCallback(async () => {
     try {
-      const response = await fetch(`${URL}`);
+      const response = await fetch(URL);
       const data = await response.json();
       setBooks(data.data.books);
     } catch (error) {
@@ -31,10 +31,6 @@ const List = () => {
   useEffect(() => {
     fetchBooks();
   }, [fetchBooks]);
-
-  if (books.length === 0) {
-    return <>Loading...</>;
-  }
 
   function handleChange(e) {
     e.preventDefault();

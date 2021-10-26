@@ -22,8 +22,8 @@ const BookDetails = () => {
       <Link to='/'>
         <button className='btn btn-primary'>Back</button>
       </Link>
-      <div className='card mb-3 w-50'>
-        <img src={image} className='img-fluid' alt={title} />
+      <div className='card w-75 d-flex flex-row justify-content-center mb-5'>
+        <img src={image} className='img-fluid w-50' alt={title} />
         <div className='card-body'>
           <h2 className='card-title text-center'>{title}</h2>
           <p className='card-text'>

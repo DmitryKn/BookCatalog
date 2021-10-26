@@ -34,7 +34,7 @@ exports.getBook = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       status: 'fail',
-      message: 'can not find the book',
+      message: 'something went wrong.',
     });
   }
 };
